@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Transition from "@/components/Transition";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,9 +30,22 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{
+          backgroundImage: 'url("/retro_2.jfif")', // Ruta de tu imagen
+          backgroundSize: 'cover', // Mantén el tamaño original de la imagen
+          backgroundPosition: 'center', // Centra la imagen
+          backgroundRepeat: 'no-repeat', // Evita la repetición
+          backgroundAttachment: 'fixed', // Fija la imagen para que no se desplace
+          minHeight: '100vh', // Asegura que el body cubra toda la ventana
+        }}
       >
-        {children}
+         <Header />
+         {/*<Transition>
+          </Transition>*/}
+          {children}
       </body>
     </html>
   );
 }
+
+const inter = Inter({ subsets: ["latin"] });
