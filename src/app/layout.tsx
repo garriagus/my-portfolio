@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Transition from "@/components/Transitions/TransitionImagen";
+import Header from "@/components/navbar/Header";
+import Transition from "@/components/Transitions/Transition";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,18 +26,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}      
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="background-blur"></div>
         <div className="content">
-       {/** <Transition imageUrl={"/ia.webp"}>
+          {/** <Transition imageUrl={"/ia.webp"}>
         </Transition>**/}
           <Header />
           {children}
-          </div>
+        </div>
       </body>
     </html>
   );
