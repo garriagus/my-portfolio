@@ -6,33 +6,28 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --giants-orange: #f46036ff;
+  --silver-lake-blue: #5b85aaff;
+  --delft-blue: #414770ff;
+  --russian-violet: #372248ff;
+  --dark-purple: #171123ff;
 }
+
 body {
   position: relative;
   min-height: 100vh;
+  background-color: var(--dark-purple);
+  color: var(--silver-lake-blue);
 }
 
-.background-blur {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('/ia.webp'); /* Ruta de tu imagen */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  filter: blur(10px); /* Aplica el desenfoque aquí */
-  z-index: -1; /* Coloca el fondo por detrás del contenido */
+nav {
+  background-color: var(--silver-lake-blue);
 }
 
-.content {
-  position: relative;
-  z-index: 1; /* Coloca el contenido por encima del fondo */
-  padding: 2rem;
+.button {
+  background-color: var(--giants-orange);
+  color: var(--dark-purple);
 }
-
-
 
 @media (prefers-color-scheme: dark) {
   :root {

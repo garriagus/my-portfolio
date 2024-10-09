@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/navbar/Header";
-import Transition from "@/components/Transitions/Transition";
+import Navbar from "@/components/navbar/Navbar";
+import { NextAuthProvider } from "@/components/Providers";
+import { ThemeProvider } from "next-themes";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,19 +28,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="background-blur"></div>
-        <div className="content">
-          {/** <Transition imageUrl={"/ia.webp"}>
-        </Transition>**/}
-          <Header />
-          {children}
-        </div>
+        <NextAuthProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>       
+              <Navbar />
+              {children}        
+          </ThemeProvider>
+        </NextAuthProvider>
       </body>
     </html>
   );
