@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import Transition from "@/components/Transition";
+import Transition from "@/components/Transitions/TransitionImagen";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,20 +29,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{
-          backgroundImage: 'url("/retro_2.jfif")', // Ruta de tu imagen
-          backgroundSize: 'cover', // Mantén el tamaño original de la imagen
-          backgroundPosition: 'center', // Centra la imagen
-          backgroundRepeat: 'no-repeat', // Evita la repetición
-          backgroundAttachment: 'fixed', // Fija la imagen para que no se desplace
-          minHeight: '100vh', // Asegura que el body cubra toda la ventana
-        }}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}      
       >
-         <Header />
-         {/*<Transition>
-          </Transition>*/}
+        <div className="background-blur"></div>
+        <div className="content">
+       {/** <Transition imageUrl={"/ia.webp"}>
+        </Transition>**/}
+          <Header />
           {children}
+          </div>
       </body>
     </html>
   );

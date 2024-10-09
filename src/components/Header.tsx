@@ -4,9 +4,9 @@ import Image from "next/image";
 export default function Header() {
   return (
     <header>
-      <nav className="p-4 bg-blue-500"
+      <nav className="p-4 "
        style={{
-        backgroundImage: 'url("/retro.jfif")', // Ruta de tu imagen
+        backgroundImage: 'url("/.jfif")', // Ruta de tu imagen
         backgroundSize: 'cover', // Mantén el tamaño original de la imagen
         backgroundPosition: 'center', // Centra la imagen
         backgroundRepeat: 'no-repeat', // Evita la repetición

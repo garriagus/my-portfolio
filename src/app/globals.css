@@ -7,6 +7,32 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+.background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/ia.webp'); /* Ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(10px); /* Aplica el desenfoque aquí */
+  z-index: -1; /* Coloca el fondo por detrás del contenido */
+}
+
+.content {
+  position: relative;
+  z-index: 1; /* Coloca el contenido por encima del fondo */
+  padding: 2rem;
+}
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {
