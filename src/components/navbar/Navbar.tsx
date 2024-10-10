@@ -22,12 +22,12 @@ const Navbar = () => {
                 priority
               />
             </div>
-            {typeof siteMetadata.headerTitle === "string" ? (
+            {typeof "siteMetadata.headerTitle" === "string" ? (
               <h1 className="hidden h-12 text-5xl font-semibold sm:block bg-gradient-to-r from-red-500 to-orange-500 text-transparent bg-clip-text">
-                {siteMetadata.headerTitle}
+                {"siteMetadata.headerTitle"}
               </h1>
             ) : (
-              siteMetadata.headerTitle
+              "siteMetadata.headerTitle"
             )}
           </div>
         </Link>
