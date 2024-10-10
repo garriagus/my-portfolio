@@ -25,14 +25,14 @@ export const authOptions: NextAuthOptions = {
         maxAge: 1200// ** 30 days
     },
     callbacks: {
-        async jwt({ token, user, account, profile }) {
+        async jwt({ token, account}) {
             if (account) {
                 token.accessToken = account.access_token
                 token.provider = account.provider
             }
             return token
         },
-        async session({ session, token, user }) {
+        async session({ session, token}) {
             // Send properties to the client, like an access_token from a provider.
 
             session.user = token;

@@ -1,19 +1,11 @@
 "use client";
 
 import { signIn, signOut, useSession } from "next-auth/react";
-//import { getServerSession } from "next-auth/next";
 import React from "react";
-import { useState } from "react";
 import Link from "next/link";
 
 const SigninButton = () => {
   const { data: session } = useSession();
-  //console.log(session?.user);
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const handleButtonClick = () => {
-    setIsExpanded(!isExpanded);
-  };
 
   if (session && session.user) {
     return (
@@ -41,7 +33,7 @@ const SigninButton = () => {
           </li>
         </ul>
         <p className="text-sky-600">{session.user.name}</p>
-        <button onClick={() => signOut()} className="text-red-600">
+        <button onClick={() => signOut()} >
           Sign Out
         </button>
       </div>

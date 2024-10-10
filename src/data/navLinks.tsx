@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const navLinks = [
   { href: "/", title: "Home" },
   { href: "/blog", title: "Blog" },

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import { NextAuthProvider } from "@/components/Providers";
@@ -45,4 +44,3 @@ export default function RootLayout({
   );
 }
 
-const inter = Inter({ subsets: ["latin"] });

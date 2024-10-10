@@ -1,11 +1,29 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import React, { useState } from "react";
 
-export default function Card(children: any) {
+type Post = {
+  id: string;
+  image: string;
+  slug: string;
+  title: string;
+  description: string;
+};
+
+type Props = {
+  children?: {
+    posts: Post;
+  };
+};
+
+export default function Card({ children }: Props) {
   const [isHovered, setIsHovered] = useState(false);
+
+  // Verificación para asegurarse de que 'children' y 'children.posts' existen
+  if (!children || !children.posts) {
+    return null; // O puedes renderizar un contenido alternativo si prefieres
+  }
 
   return (
     <>

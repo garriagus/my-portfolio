@@ -16,12 +16,27 @@
 body {
   position: relative;
   min-height: 100vh;
-  background-color: var(--dark-purple);
   color: var(--silver-lake-blue);
 }
 
+.dark body {
+  @apply bg-dark-purple;
+}
+
 nav {
-  background-color: var(--silver-lake-blue);
+  @apply bg-silver-lake-blue; /* Color predeterminado */
+}
+
+h1 {
+  color: var(--giants-orange);
+}
+
+button {
+  color: var(--giants-orange);
+}
+
+.dark nav {
+  @apply bg-russian-violet; /* Color en modo oscuro */
 }
 
 .button {
@@ -36,22 +51,27 @@ nav {
     --background-end-rgb: 0, 0, 0;
   }
 }
+
 @keyframes typing {
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
 }
 
 @keyframes blink-caret {
+
   from,
   to {
     border-color: transparent;
   }
+
   50% {
-    border-color: #000; /* Puedes ajustar el color del cursor al parpadear */
+    border-color: #000;
+    /* Puedes ajustar el color del cursor al parpadear */
   }
 }
 
@@ -59,6 +79,7 @@ nav {
   overflow: hidden;
   display: inline-block;
   white-space: nowrap;
-  border-right: 2px solid transparent; /* Ajusta según tus necesidades */
+  border-right: 2px solid transparent;
+  /* Ajusta según tus necesidades */
   animation: typing 2s steps(20, end), blink-caret 0.75s infinite alternate;
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -14,7 +13,7 @@ export default function Transition({ children }: HomeProps) {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsShifted(true);
-        }, 5000);
+        }, 3000);
 
         return () => clearTimeout(timer);
     }, []);
@@ -34,10 +33,10 @@ export default function Transition({ children }: HomeProps) {
                 height: '100%' // Ocupar el 100% del alto
             }}
         >
-          
-                <h1 className="text-2xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-                    {children}
-                </h1>
+
+            <h1 className="text-2xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+                {children}
+            </h1>
         </motion.div>
     );
 }

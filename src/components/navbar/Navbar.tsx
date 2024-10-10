@@ -9,12 +9,12 @@ import { ModeToggle } from "@/components/navbar/mode-toggle";
 const Navbar = () => {
   return (
     <header>
-      <nav className="flex items-center justify-between p-1 w-full max-w-screen ">
+      <nav className="flex items-center justify-between p-5 w-full max-w-screen ">
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
             <div className="mr-2">
               <Image
-                src="/logo.png"
+                src="/logo-removebg-preview.png"
                 alt="Agustín Garrido logo"
                 className="dark:invert"
                 width={50}
@@ -23,9 +23,9 @@ const Navbar = () => {
               />
             </div>
             {typeof siteMetadata.headerTitle === "string" ? (
-              <div className="hidden h-4 text-lg font-semibold sm:block">
+              <h1 className="hidden h-12 text-5xl font-semibold sm:block bg-gradient-to-r from-red-500 to-orange-500 text-transparent bg-clip-text">
                 {siteMetadata.headerTitle}
-              </div>
+              </h1>
             ) : (
               siteMetadata.headerTitle
             )}
